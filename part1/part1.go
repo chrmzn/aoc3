@@ -28,17 +28,21 @@ func main() {
 	// Assumes same width on all lines
 	maxWidth := len(fileTextLines[0])
 
+	treeCount := 0
+
 	for i, rowData := range fileTextLines {
 		if i == vertLoc {
 			locItem := rowData[widthLoc-1]
 			fmt.Printf("%s - %d, %d (%c)\n", rowData, vertLoc, widthLoc, locItem)
+			if locItem == '#' {
+				treeCount++
+			}
 			vertLoc = vertLoc + 1
 			widthLoc = widthLoc + 3
 			if widthLoc > maxWidth {
 				widthLoc = widthLoc - maxWidth
 			}
 		}
-
 	}
-
+	fmt.Printf("Total Trees: %d\n", treeCount)
 }
