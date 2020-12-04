@@ -24,7 +24,7 @@ func main() {
 	readFile.Close()
 
 	// Starting at 0,0
-	vertLoc, widthLoc := 1, 3
+	vertLoc, widthLoc := 1, 4
 	// Assumes same width on all lines
 	maxWidth := len(fileTextLines[0])
 
