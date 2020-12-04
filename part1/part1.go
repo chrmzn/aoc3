@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -23,8 +24,21 @@ func main() {
 	readFile.Close()
 
 	// Starting at 0,0
-	vertLoc, widthLoc := 0, 0
+	vertLoc, widthLoc := 1, 3
 	// Assumes same width on all lines
 	maxWidth := len(fileTextLines[0])
+
+	for i, rowData := range fileTextLines {
+		if i == vertLoc {
+			locItem := rowData[widthLoc]
+			fmt.Printf("%s - %d, %d (%c)\n", rowData, vertLoc, widthLoc, locItem)
+			vertLoc = vertLoc + 1
+			widthLoc = widthLoc + 3
+			if widthLoc > maxWidth {
+				widthLoc = widthLoc - maxWidth
+			}
+		}
+
+	}
 
 }
