@@ -47,11 +47,16 @@ func main() {
 
 	readFile.Close()
 
-	runTypes := [][]int{{1, 1}, {1, 3}}
+	runTypes := [][]int{{1, 1}, {1, 3}, {1, 5}, {1, 7}, {2, 1}}
+
+	productAnswer := 1
 
 	for _, run := range runTypes {
 		vertMov, widthMov := run[0], run[1]
 		treeCount := runRouteAnalysis(fileTextLines, vertMov, widthMov)
 		fmt.Printf("Total Trees (%d, %d): %d\n", vertMov, widthMov, treeCount)
+		productAnswer = productAnswer * treeCount
 	}
+
+	fmt.Printf("Answer: %d", productAnswer)
 }
