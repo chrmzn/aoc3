@@ -30,7 +30,7 @@ func main() {
 
 	for i, rowData := range fileTextLines {
 		if i == vertLoc {
-			locItem := rowData[widthLoc]
+			locItem := rowData[widthLoc-1]
 			fmt.Printf("%s - %d, %d (%c)\n", rowData, vertLoc, widthLoc, locItem)
 			vertLoc = vertLoc + 1
 			widthLoc = widthLoc + 3
