@@ -19,8 +19,8 @@ func runRouteAnalysis(route []string, vertMov int, widthMov int) (treeCount int)
 			if locItem == '#' {
 				treeCount++
 			}
-			vertLoc = vertLoc + 1
-			widthLoc = widthLoc + 3
+			vertLoc = vertLoc + vertMov
+			widthLoc = widthLoc + widthMov
 			if widthLoc > maxWidth {
 				widthLoc = widthLoc - maxWidth
 			}
